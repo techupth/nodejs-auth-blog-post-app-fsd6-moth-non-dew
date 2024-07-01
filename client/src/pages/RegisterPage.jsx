@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -77,7 +80,7 @@ function RegisterPage() {
           </label>
         </div>
         <div className="form-actions">
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={()=>navigate("/")}>Submit</button>
         </div>
       </form>
     </div>
